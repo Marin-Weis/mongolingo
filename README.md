@@ -1,116 +1,185 @@
-# 🦉 Mongolingo
+# Mongolingo — Quiz interactif MongoDB
 
-**Mongolingo** is an interactive MongoDB learning platform inspired by Duolingo.  
-The goal of the project is to help users practice **NoSQL queries** through progressive quiz-based exercises, from simple queries to more advanced MongoDB operations.
+> Projet R4.03 - Qualité au-delà du relationnel  
+> Auteur : **Marin Weis**  
+> Groupe : **C1**
 
-This project was developed as part of a university assignment focused on **MongoDB, NoSQL databases, data modeling, and query practice**.
-
----
-
-## 🚀 Overview
-
-Mongolingo provides a playful and structured way to learn MongoDB queries.  
-Users can go through different exercises, try to understand the expected result, and compare their answers with explanations.
-
-The project includes:
-
-- a React web interface;
-- MongoDB collections and schemas;
-- demo data;
-- progressive query exercises;
-- explanations for each solution;
-- JSON / BSON data files;
-- installation documentation;
-- a demonstration video.
+**Vidéo de démonstration** : https://youtu.be/CKsS4sp4e6w
 
 ---
 
-## 🎯 Project Goals
+## Présentation
 
-The main goals of this project were to:
-
-- design a web application for learning MongoDB;
-- create a progressive set of MongoDB query exercises;
-- explain each query and its expected result;
-- structure collections and demo data properly;
-- provide import/export files in JSON and BSON formats;
-- deliver a clean, documented and demonstrable project.
+Mongolingo est une application web interactive inspirée de Duolingo, dédiée à l'apprentissage des requêtes MongoDB. Elle propose 30 questions de niveaux progressifs (débutant → très complexe), exécute chaque requête en temps réel sur une base MongoDB locale, et explique la solution à l'utilisateur.
 
 ---
 
-## ✨ Features
+## Structure du projet
 
-- Interactive MongoDB quiz interface
-- Progressive exercises, from basic to advanced queries
-- Query explanations and corrections
-- MongoDB collection schemas
-- Demo dataset
-- JSON and BSON backup files
-- Clean React interface
-- Installation documentation
-- Online demo and video demonstration
+```
+server/
+  index.js                Serveur Express + API MongoDB
+  questions-meta.json     Les 30 questions du quiz (métadonnées + explications)
 
----
+src/
+  pages/                  Composants React (Accueil, Quiz, Collections, Import/Export, Sauvegardes)
+  api/client.js           Fonctions de communication avec l'API
 
-## 🛠️ Tech Stack
+schemas/
+  users.schema.json       Schéma JSON Schema de la collection users
+  orders.schema.json      Schéma JSON Schema de la collection orders
+  lessons.schema.json     Schéma JSON Schema de la collection lessons
 
-- **React**
-- **JavaScript**
-- **MongoDB**
-- **JSON**
-- **BSON**
-- **HTML / CSS**
-- **Git / GitHub**
+demo-data/
+  users.json              30 utilisateurs de démonstration
+  orders.json             50 commandes de démonstration
+  lessons.json            30 leçons de démonstration
 
----
+backups/
+  (sauvegardes créées via l'interface, au format JSON et BSON base64)
 
-## 🧠 What I Learned
-
-This project helped me improve several technical skills:
-
-- designing a learning-oriented web application;
-- structuring data with MongoDB collections;
-- writing MongoDB queries with increasing complexity;
-- creating clear explanations for technical exercises;
-- organizing demo data and database backups;
-- documenting a project for installation and demonstration;
-- building a complete application independently.
+dist/
+  (frontend React compilé — généré par npm run build)
+```
 
 ---
 
-## 📚 Learning Content
+## Installation sur Ubuntu (22.04 ou plus récent)
 
-Mongolingo includes exercises based on MongoDB concepts such as:
+### 1. Installer Node.js 18+
 
-- basic document search;
-- filters and conditions;
-- comparison operators;
-- logical operators;
-- nested fields;
-- arrays;
-- sorting;
-- limiting results;
-- projections;
-- aggregation basics;
-- more advanced query combinations.
+```bash
+node --version   # vérifier si déjà installé
+```
+
+Si absent ou version < 18 :
+
+```bash
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+
+### 2. Installer MongoDB
+
+```bash
+sudo apt install -y mongodb
+sudo systemctl start mongodb
+```
+
+Vérifier que MongoDB tourne :
+
+```bash
+sudo systemctl status mongodb
+```
+
+### 3. Installer et lancer Mongolingo
+
+```bash
+# Extraire l'archive
+unzip mongolingo.zip
+cd mongolingo
+
+# Installer les dépendances Node
+npm install
+
+# Compiler le frontend React
+npm run build
+
+# Lancer le serveur
+node server/index.js
+```
+
+Ouvrir dans le navigateur : [http://localhost:3001](http://localhost:3001)
+
+> Les données de démonstration sont chargées automatiquement au premier démarrage si les collections MongoDB sont vides.
 
 ---
 
-## 📁 Project Structure
+## Installation sur Windows 10 / 11
 
-```txt
-mongolingo/
-├── public/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── data/
-│   └── styles/
-├── database/
-│   ├── schemas/
-│   ├── demo-data/
-│   ├── json/
-│   └── bson/
-├── docs/
-├── README.md
-└── package.json
+### 1. Installer Node.js 18+
+
+Télécharger l'installeur LTS sur [https://nodejs.org](https://nodejs.org) et l'exécuter.
+
+Vérifier l'installation dans un terminal (PowerShell ou CMD) :
+
+```powershell
+node --version
+npm --version
+```
+
+### 2. Installer MongoDB Community Edition
+
+1. Télécharger l'installeur `.msi` depuis : https://www.mongodb.com/try/download/community  
+   (choisir **Windows**, version **7.0** ou plus récente, package **MSI**)
+2. Lancer l'installeur — cocher **"Install MongoDB as a Service"** pour qu'il démarre automatiquement.
+3. Vérifier que le service tourne :
+
+```powershell
+Get-Service -Name MongoDB
+```
+
+Si le service n'est pas démarré :
+
+```powershell
+net start MongoDB
+```
+
+### 3. Installer et lancer Mongolingo
+
+Dans PowerShell ou CMD :
+
+```powershell
+# Extraire l'archive (via l'explorateur ou la commande suivante)
+Expand-Archive mongolingo.zip -DestinationPath mongolingo
+cd mongolingo
+
+# Installer les dépendances Node
+npm install
+
+# Compiler le frontend React
+npm run build
+
+# Lancer le serveur
+node server/index.js
+```
+
+Ouvrir dans le navigateur : [http://localhost:3001](http://localhost:3001)
+
+> Si Windows Defender vous demande d'autoriser l'accès réseau pour Node.js, acceptez.
+
+---
+
+## Ports utilisés
+
+| Port  | Usage                            |
+|-------|----------------------------------|
+| 3001  | Serveur Express (API + frontend) |
+| 27017 | MongoDB (port par défaut)        |
+
+---
+
+## Réinitialiser les données de démonstration
+
+Si les collections ont été modifiées via l'import et que vous souhaitez revenir aux données initiales :
+
+**Via l'interface :** page Accueil → bouton *Reset demo-data*
+
+**Via le terminal (Ubuntu) :**
+```bash
+curl -X POST http://localhost:3001/api/reset
+```
+
+**Via PowerShell (Windows) :**
+```powershell
+Invoke-RestMethod -Method POST -Uri http://localhost:3001/api/reset
+```
+
+---
+
+## Fonctionnalités
+
+- **Quiz** — 30 questions MongoDB de niveaux progressifs, exécutées en temps réel sur la base de données. Chaque réponse est comparée au résultat attendu et une explication détaillée est fournie.
+- **Collections** — Visualisation des collections `users`, `orders` et `lessons` et de leur schéma.
+- **Import / Export** — Chargement et téléchargement de données au format JSON ou BSON pour chaque collection.
+- **Sauvegardes** — Création de sauvegardes nommées (JSON + BSON) et restauration depuis l'interface.
