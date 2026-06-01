@@ -1,0 +1,92 @@
+[
+  {
+    "_id": "user_201",
+    "name": "Arthur Pendragon",
+    "email": "arthur.p@bretagne.fr",
+    "age": 35,
+    "city": "Vannes",
+    "status": "active",
+    "balance": 2500
+  },
+  {
+    "_id": "user_202",
+    "name": "Léa Dubois",
+    "email": "lea.dubois@gmail.com",
+    "age": 28,
+    "city": "Rennes",
+    "status": "active",
+    "balance": 420
+  },
+  {
+    "_id": "user_203",
+    "name": "Marc Lemaire",
+    "email": "m.lemaire@outlook.fr",
+    "age": 42,
+    "city": "Nantes",
+    "status": "inactive",
+    "balance": 150
+  },
+  {
+    "_id": "user_204",
+    "name": "Sophie Martin",
+    "email": "smartin@yahoo.com",
+    "age": 31,
+    "city": "Paris",
+    "status": "active",
+    "balance": 890
+  },
+  {
+    "_id": "user_205",
+    "name": "Lucas Petit",
+    "email": "lucas.petit@gmail.com",
+    "age": 24,
+    "city": "Bordeaux",
+    "status": "banned",
+    "balance": 0
+  },
+  {
+    "_id": "user_206",
+    "name": "Emma Roux",
+    "email": "emma.roux@hotmail.fr",
+    "age": 29,
+    "city": "Lyon",
+    "status": "active",
+    "balance": 3100
+  },
+  {
+    "_id": "user_207",
+    "name": "Hugo Moreau",
+    "email": "hugo.m@gmail.com",
+    "age": 37,
+    "city": "Toulouse",
+    "status": "active",
+    "balance": 125
+  },
+  {
+    "_id": "user_208",
+    "name": "Camille Leroy",
+    "email": "camille.leroy@outlook.com",
+    "age": 26,
+    "city": "Lille",
+    "status": "inactive",
+    "balance": 650
+  },
+  {
+    "_id": "user_209",
+    "name": "Victor Blanc",
+    "email": "v.blanc@gmail.com",
+    "age": 45,
+    "city": "Strasbourg",
+    "status": "active",
+    "balance": 4500
+  },
+  {
+    "_id": "user_210",
+    "name": "Chloé Garnier",
+    "email": "chloe.g@yahoo.fr",
+    "age": 33,
+    "city": "Vannes",
+    "status": "active",
+    "balance": 210
+  }
+]

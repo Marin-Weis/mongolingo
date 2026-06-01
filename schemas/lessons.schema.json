@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mongolingo/schemas/lessons.schema.json",
+  "title": "Lesson",
+  "description": "Leçon MongoDB avec tags et niveau de difficulté",
+  "type": "object",
+  "required": ["_id", "title", "difficulty", "tags"],
+  "properties": {
+    "_id": {
+      "type": "string",
+      "description": "Identifiant unique de la leçon",
+      "pattern": "^lesson_[0-9]+$",
+      "examples": ["lesson_1", "lesson_30"]
+    },
+    "title": {
+      "type": "string",
+      "description": "Titre de la leçon",
+      "minLength": 3,
+      "maxLength": 200
+    },
+    "difficulty": {
+      "type": "string",
+      "description": "Niveau de difficulté de la leçon",
+      "enum": ["beginner", "intermediate", "advanced"]
+    },
+    "tags": {
+      "type": "array",
+      "description": "Liste de mots-clés décrivant la leçon",
+      "items": {
+        "type": "string",
+        "minLength": 2
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

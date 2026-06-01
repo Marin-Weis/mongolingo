@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mongolingo/schemas/users.schema.json",
+  "title": "User",
+  "description": "Utilisateur de la plateforme Mongolingo",
+  "type": "object",
+  "required": ["_id", "name", "email", "age", "city", "status", "balance"],
+  "properties": {
+    "_id": {
+      "type": "string",
+      "description": "Identifiant unique de l'utilisateur",
+      "pattern": "^user_[0-9]+$",
+      "examples": ["user_1", "user_42"]
+    },
+    "name": {
+      "type": "string",
+      "description": "Nom complet de l'utilisateur",
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "email": {
+      "type": "string",
+      "description": "Adresse email unique",
+      "format": "email"
+    },
+    "age": {
+      "type": "integer",
+      "description": "Âge de l'utilisateur en années",
+      "minimum": 18,
+      "maximum": 120
+    },
+    "city": {
+      "type": "string",
+      "description": "Ville de résidence",
+      "enum": ["Paris", "Lyon", "Bordeaux", "Toulouse", "Nice"]
+    },
+    "status": {
+      "type": "string",
+      "description": "Statut du compte",
+      "enum": ["active", "inactive", "banned"]
+    },
+    "balance": {
+      "type": "number",
+      "description": "Solde du compte en euros",
+      "minimum": 0
+    }
+  },
+  "additionalProperties": false
+}

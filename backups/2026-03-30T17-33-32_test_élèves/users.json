@@ -1,0 +1,285 @@
+[
+  {
+    "_id": "user_1",
+    "name": "Alice Martin",
+    "email": "alice.martin@gmail.com",
+    "age": 28,
+    "city": "Paris",
+    "status": "active",
+    "balance": 342.5
+  },
+  {
+    "_id": "user_2",
+    "name": "Bob Dupont",
+    "email": "bob.dupont@yahoo.fr",
+    "age": 35,
+    "city": "Lyon",
+    "status": "active",
+    "balance": 87
+  },
+  {
+    "_id": "user_3",
+    "name": "Claire Durand",
+    "email": "claire.d@gmail.com",
+    "age": 22,
+    "city": "Bordeaux",
+    "status": "inactive",
+    "balance": 510.75
+  },
+  {
+    "_id": "user_4",
+    "name": "David Bernard",
+    "email": "david.b@outlook.com",
+    "age": 45,
+    "city": "Paris",
+    "status": "active",
+    "balance": 920
+  },
+  {
+    "_id": "user_5",
+    "name": "Emma Petit",
+    "email": "emma.petit@gmail.com",
+    "age": 30,
+    "city": "Lyon",
+    "status": "banned",
+    "balance": 0
+  },
+  {
+    "_id": "user_6",
+    "name": "François Moreau",
+    "email": "fmoreau@gmail.com",
+    "age": 52,
+    "city": "Paris",
+    "status": "active",
+    "balance": 654.2
+  },
+  {
+    "_id": "user_7",
+    "name": "Gabrielle Simon",
+    "email": "gab.simon@hotmail.fr",
+    "age": 19,
+    "city": "Toulouse",
+    "status": "active",
+    "balance": 123
+  },
+  {
+    "_id": "user_8",
+    "name": "Hugo Laurent",
+    "email": "hugo.laurent@gmail.com",
+    "age": 38,
+    "city": "Nice",
+    "status": "inactive",
+    "balance": 275.6
+  },
+  {
+    "_id": "user_9",
+    "name": "Inès Michel",
+    "email": "ines.michel@gmail.com",
+    "age": 27,
+    "city": "Paris",
+    "status": "active",
+    "balance": 198.3
+  },
+  {
+    "_id": "user_10",
+    "name": "Jules Lefebvre",
+    "email": "jules.l@yahoo.fr",
+    "age": 33,
+    "city": "Bordeaux",
+    "status": "active",
+    "balance": 430
+  },
+  {
+    "_id": "user_11",
+    "name": "Karine Roux",
+    "email": "karine.roux@gmail.com",
+    "age": 41,
+    "city": "Lyon",
+    "status": "active",
+    "balance": 560.9
+  },
+  {
+    "_id": "user_12",
+    "name": "Lucas Fournier",
+    "email": "lucas.f@outlook.com",
+    "age": 24,
+    "city": "Paris",
+    "status": "active",
+    "balance": 75
+  },
+  {
+    "_id": "user_13",
+    "name": "Manon Girard",
+    "email": "manon.girard@gmail.com",
+    "age": 29,
+    "city": "Toulouse",
+    "status": "inactive",
+    "balance": 310.4
+  },
+  {
+    "_id": "user_14",
+    "name": "Nicolas Bonnet",
+    "email": "nicolas.b@gmail.com",
+    "age": 55,
+    "city": "Nice",
+    "status": "active",
+    "balance": 880
+  },
+  {
+    "_id": "user_15",
+    "name": "Olivia Thomas",
+    "email": "olivia.t@gmail.com",
+    "age": 31,
+    "city": "Paris",
+    "status": "active",
+    "balance": 445.15
+  },
+  {
+    "_id": "user_16",
+    "name": "Pierre Martinez",
+    "email": "p.martinez@hotmail.fr",
+    "age": 48,
+    "city": "Bordeaux",
+    "status": "banned",
+    "balance": 12
+  },
+  {
+    "_id": "user_17",
+    "name": "Quentin Dubois",
+    "email": "quentin.d@gmail.com",
+    "age": 26,
+    "city": "Lyon",
+    "status": "active",
+    "balance": 230.7
+  },
+  {
+    "_id": "user_18",
+    "name": "Raphaëlle Garcia",
+    "email": "raph.garcia@gmail.com",
+    "age": 36,
+    "city": "Paris",
+    "status": "active",
+    "balance": 715
+  },
+  {
+    "_id": "user_19",
+    "name": "Sébastien Robert",
+    "email": "seb.robert@yahoo.fr",
+    "age": 43,
+    "city": "Toulouse",
+    "status": "inactive",
+    "balance": 95.5
+  },
+  {
+    "_id": "user_20",
+    "name": "Théa Leroy",
+    "email": "thea.leroy@gmail.com",
+    "age": 21,
+    "city": "Nice",
+    "status": "active",
+    "balance": 189
+  },
+  {
+    "_id": "user_21",
+    "name": "Ugo Bertrand",
+    "email": "ugo.bertrand@gmail.com",
+    "age": 34,
+    "city": "Paris",
+    "status": "active",
+    "balance": 503
+  },
+  {
+    "_id": "user_22",
+    "name": "Valentine Morel",
+    "email": "valentine.m@outlook.com",
+    "age": 23,
+    "city": "Lyon",
+    "status": "active",
+    "balance": 62.8
+  },
+  {
+    "_id": "user_23",
+    "name": "William Faure",
+    "email": "william.f@gmail.com",
+    "age": 60,
+    "city": "Bordeaux",
+    "status": "active",
+    "balance": 990
+  },
+  {
+    "_id": "user_24",
+    "name": "Xénia Rousseau",
+    "email": "xenia.r@gmail.com",
+    "age": 25,
+    "city": "Paris",
+    "status": "active",
+    "balance": 155.6
+  },
+  {
+    "_id": "user_25",
+    "name": "Yann Blanc",
+    "email": "yann.blanc@hotmail.fr",
+    "age": 39,
+    "city": "Toulouse",
+    "status": "active",
+    "balance": 348
+  },
+  {
+    "_id": "user_26",
+    "name": "Zoé Chevalier",
+    "email": "zoe.chevalier@gmail.com",
+    "age": 18,
+    "city": "Nice",
+    "status": "inactive",
+    "balance": 0
+  },
+  {
+    "_id": "user_27",
+    "name": "Antoine Colin",
+    "email": "antoine.colin@gmail.com",
+    "age": 32,
+    "city": "Paris",
+    "status": "active",
+    "balance": 267.3
+  },
+  {
+    "_id": "user_28",
+    "name": "Béatrice Mercier",
+    "email": "beatrice.m@yahoo.fr",
+    "age": 44,
+    "city": "Lyon",
+    "status": "active",
+    "balance": 612
+  },
+  {
+    "_id": "user_29",
+    "name": "Cédric Lemaire",
+    "email": "cedric.lemaire@outlook.com",
+    "age": 37,
+    "city": "Bordeaux",
+    "status": "banned",
+    "balance": 5
+  },
+  {
+    "_id": "user_30",
+    "name": "Delphine Renard",
+    "email": "delphine.r@gmail.com",
+    "age": 50,
+    "city": "Paris",
+    "status": "active",
+    "balance": 780.45
+  },
+  {
+    "_id": "user_31",
+    "name": "Arthur Jan",
+    "email": "arthurjan@gmail.com",
+    "age": 30,
+    "city": "Vannes",
+    "status": "active",
+    "balance": 150
+  },
+  {
+    "_id": "1",
+    "name": "Gabin Lejas-Grenier"
+  }
+]

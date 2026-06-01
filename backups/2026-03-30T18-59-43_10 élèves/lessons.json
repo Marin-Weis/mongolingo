@@ -1,0 +1,313 @@
+[
+  {
+    "_id": "lesson_1",
+    "title": "Introduction à MongoDB",
+    "difficulty": "beginner",
+    "tags": [
+      "mongodb",
+      "nosql",
+      "introduction"
+    ]
+  },
+  {
+    "_id": "lesson_2",
+    "title": "Opérations CRUD basiques",
+    "difficulty": "beginner",
+    "tags": [
+      "mongodb",
+      "crud",
+      "find",
+      "insert"
+    ]
+  },
+  {
+    "_id": "lesson_3",
+    "title": "Filtres et opérateurs de comparaison",
+    "difficulty": "beginner",
+    "tags": [
+      "mongodb",
+      "filter",
+      "operators"
+    ]
+  },
+  {
+    "_id": "lesson_4",
+    "title": "Projections et tri",
+    "difficulty": "beginner",
+    "tags": [
+      "mongodb",
+      "projection",
+      "sort"
+    ]
+  },
+  {
+    "_id": "lesson_5",
+    "title": "Opérateurs logiques $and $or $not",
+    "difficulty": "beginner",
+    "tags": [
+      "mongodb",
+      "operators",
+      "logic"
+    ]
+  },
+  {
+    "_id": "lesson_6",
+    "title": "Travailler avec les tableaux",
+    "difficulty": "intermediate",
+    "tags": [
+      "mongodb",
+      "array",
+      "elemMatch"
+    ]
+  },
+  {
+    "_id": "lesson_7",
+    "title": "Opérateur $in et $nin",
+    "difficulty": "intermediate",
+    "tags": [
+      "mongodb",
+      "operators",
+      "array"
+    ]
+  },
+  {
+    "_id": "lesson_8",
+    "title": "Introduction à l'aggregation",
+    "difficulty": "intermediate",
+    "tags": [
+      "mongodb",
+      "aggregation",
+      "pipeline"
+    ]
+  },
+  {
+    "_id": "lesson_9",
+    "title": "$match et $project",
+    "difficulty": "intermediate",
+    "tags": [
+      "mongodb",
+      "aggregation",
+      "match"
+    ]
+  },
+  {
+    "_id": "lesson_10",
+    "title": "$group et accumulateurs",
+    "difficulty": "intermediate",
+    "tags": [
+      "mongodb",
+      "aggregation",
+      "group"
+    ]
+  },
+  {
+    "_id": "lesson_11",
+    "title": "$sort et $limit dans l'aggregation",
+    "difficulty": "intermediate",
+    "tags": [
+      "mongodb",
+      "aggregation",
+      "sort"
+    ]
+  },
+  {
+    "_id": "lesson_12",
+    "title": "$unwind — déplier les tableaux",
+    "difficulty": "intermediate",
+    "tags": [
+      "mongodb",
+      "aggregation",
+      "unwind",
+      "array"
+    ]
+  },
+  {
+    "_id": "lesson_13",
+    "title": "$lookup — les jointures MongoDB",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "aggregation",
+      "lookup",
+      "join"
+    ]
+  },
+  {
+    "_id": "lesson_14",
+    "title": "$addFields et $set",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "aggregation",
+      "addFields"
+    ]
+  },
+  {
+    "_id": "lesson_15",
+    "title": "Expressions conditionnelles $cond",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "aggregation",
+      "cond",
+      "expression"
+    ]
+  },
+  {
+    "_id": "lesson_16",
+    "title": "Les index en MongoDB",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "index",
+      "performance"
+    ]
+  },
+  {
+    "_id": "lesson_17",
+    "title": "Index composés et stratégies",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "index",
+      "compound"
+    ]
+  },
+  {
+    "_id": "lesson_18",
+    "title": "Expressions régulières $regex",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "regex",
+      "text",
+      "filter"
+    ]
+  },
+  {
+    "_id": "lesson_19",
+    "title": "$facet — multi-pipeline",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "aggregation",
+      "facet",
+      "pipeline"
+    ]
+  },
+  {
+    "_id": "lesson_20",
+    "title": "$bucket et $bucketAuto",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "aggregation",
+      "bucket"
+    ]
+  },
+  {
+    "_id": "lesson_21",
+    "title": "Le modèle de données MongoDB",
+    "difficulty": "beginner",
+    "tags": [
+      "mongodb",
+      "schema",
+      "nosql"
+    ]
+  },
+  {
+    "_id": "lesson_22",
+    "title": "Schémas avec JSON Schema",
+    "difficulty": "intermediate",
+    "tags": [
+      "mongodb",
+      "schema",
+      "validation"
+    ]
+  },
+  {
+    "_id": "lesson_23",
+    "title": "$lookup avancé avec pipeline",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "aggregation",
+      "lookup",
+      "pipeline"
+    ]
+  },
+  {
+    "_id": "lesson_24",
+    "title": "$setWindowFields et ranking",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "aggregation",
+      "window",
+      "rank"
+    ]
+  },
+  {
+    "_id": "lesson_25",
+    "title": "Transactions et sessions",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "transaction",
+      "session"
+    ]
+  },
+  {
+    "_id": "lesson_26",
+    "title": "Réplication et Replica Set",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "replication",
+      "availability"
+    ]
+  },
+  {
+    "_id": "lesson_27",
+    "title": "Sharding horizontal",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "sharding",
+      "scalability"
+    ]
+  },
+  {
+    "_id": "lesson_28",
+    "title": "Aggregation — $graphLookup",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "aggregation",
+      "graph",
+      "lookup"
+    ]
+  },
+  {
+    "_id": "lesson_29",
+    "title": "Atlas Search et recherche full-text",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "search",
+      "atlas",
+      "text"
+    ]
+  },
+  {
+    "_id": "lesson_30",
+    "title": "Optimisation de requêtes et explain",
+    "difficulty": "advanced",
+    "tags": [
+      "mongodb",
+      "index",
+      "performance",
+      "explain"
+    ]
+  }
+]

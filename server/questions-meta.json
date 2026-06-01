@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "level": "débutant",
+    "title": "Tous les utilisateurs",
+    "instruction": "Récupère tous les documents de la collection users.",
+    "collection": "users",
+    "operationHint": "find",
+    "solution": "db.users.find({})",
+    "explanation": "find({}) sans filtre retourne tous les documents. Équivalent SQL : SELECT * FROM users."
+  },
+  {
+    "id": 2,
+    "level": "débutant",
+    "title": "Compter les utilisateurs",
+    "instruction": "Compte le nombre total de documents dans la collection users.",
+    "collection": "users",
+    "operationHint": "countDocuments",
+    "solution": "db.users.countDocuments({})",
+    "explanation": "countDocuments({}) retourne le nombre total de documents dans la collection."
+  },
+  {
+    "id": 3,
+    "level": "débutant",
+    "title": "Utilisateurs de Paris",
+    "instruction": "Trouve tous les utilisateurs qui habitent à Paris.",
+    "collection": "users",
+    "operationHint": "find",
+    "solution": "db.users.find({ city: \"Paris\" })",
+    "explanation": "Le filtre { city: \"Paris\" } sélectionne les documents dont le champ city vaut exactement \"Paris\"."
+  },
+  {
+    "id": 4,
+    "level": "débutant",
+    "title": "Utilisateurs actifs",
+    "instruction": "Récupère tous les utilisateurs dont le statut est \"active\".",
+    "collection": "users",
+    "operationHint": "find",
+    "solution": "db.users.find({ status: \"active\" })",
+    "explanation": "Filtre simple sur le champ status. Les valeurs possibles sont : active, inactive, banned."
+  },
+  {
+    "id": 5,
+    "level": "débutant",
+    "title": "Projection — nom et email",
+    "instruction": "Récupère uniquement les champs name et email de tous les utilisateurs (sans _id).",
+    "collection": "users",
+    "operationHint": "find",
+    "solution": "db.users.find({}, { name: 1, email: 1, _id: 0 })",
+    "explanation": "Le 2e argument de find() est la projection. 1 = inclure, 0 = exclure. _id est inclus par défaut, il faut le mettre à 0 pour l'exclure."
+  },
+  {
+    "id": 6,
+    "level": "intermédiaire",
+    "title": "Utilisateurs de plus de 30 ans",
+    "instruction": "Trouve tous les utilisateurs dont l'âge est strictement supérieur à 30 ans.",
+    "collection": "users",
+    "operationHint": "find",
+    "solution": "db.users.find({ age: { $gt: 30 } })",
+    "explanation": "$gt signifie 'greater than'. Les autres opérateurs : $lt, $gte, $lte, $ne."
+  },
+  {
+    "id": 7,
+    "level": "intermédiaire",
+    "title": "Balance entre 100 et 500",
+    "instruction": "Trouve les utilisateurs dont la balance est entre 100 (inclus) et 500 (inclus).",
+    "collection": "users",
+    "operationHint": "find",
+    "solution": "db.users.find({ balance: { $gte: 100, $lte: 500 } })",
+    "explanation": "On combine $gte et $lte dans le même champ. Équivalent SQL : WHERE balance BETWEEN 100 AND 500."
+  },
+  {
+    "id": 8,
+    "level": "intermédiaire",
+    "title": "Top 5 par balance",
+    "instruction": "Récupère les 5 utilisateurs avec la balance la plus élevée (tri décroissant, limite 5). Utilise les Options.",
+    "collection": "users",
+    "operationHint": "find",
+    "solution": "db.users.find({}).sort({ balance: -1 }).limit(5)",
+    "explanation": "Passe { sort: { balance: -1 }, limit: 5 } dans le champ Options. -1 = décroissant, 1 = croissant."
+  },
+  {
+    "id": 9,
+    "level": "intermédiaire",
+    "title": "Commandes payées",
+    "instruction": "Trouve toutes les commandes dont le statut est \"paid\".",
+    "collection": "orders",
+    "operationHint": "find",
+    "solution": "db.orders.find({ status: \"paid\" })",
+    "explanation": "La collection orders a les statuts : paid, pending, cancelled."
+  },
+  {
+    "id": 10,
+    "level": "intermédiaire",
+    "title": "Opérateur $in",
+    "instruction": "Trouve tous les utilisateurs dont la ville est \"Paris\" ou \"Lyon\" ou \"Bordeaux\".",
+    "collection": "users",
+    "operationHint": "find",
+    "solution": "db.users.find({ city: { $in: [\"Paris\", \"Lyon\", \"Bordeaux\"] } })",
+    "explanation": "$in teste si le champ correspond à l'une des valeurs de la liste. Équivalent SQL : WHERE city IN (...)."
+  },
+  {
+    "id": 11,
+    "level": "intermédiaire",
+    "title": "Commandes en attente",
+    "instruction": "Compte le nombre de commandes dont le statut est \"pending\".",
+    "collection": "orders",
+    "operationHint": "countDocuments",
+    "solution": "db.orders.countDocuments({ status: \"pending\" })",
+    "explanation": "countDocuments() accepte un filtre comme find(). On ne compte que les commandes en attente."
+  },
+  {
+    "id": 12,
+    "level": "intermédiaire",
+    "title": "Opérateur $and explicite",
+    "instruction": "Trouve les utilisateurs actifs ET âgés de plus de 25 ans, avec l'opérateur $and explicite.",
+    "collection": "users",
+    "operationHint": "find",
+    "solution": "db.users.find({ $and: [{ status: \"active\" }, { age: { $gt: 25 } }] })",
+    "explanation": "$and prend un tableau de conditions. Utile quand on a plusieurs conditions sur le même champ."
+  },
+  {
+    "id": 13,
+    "level": "avancé",
+    "title": "Aggregation — group par ville",
+    "instruction": "Compte le nombre d'utilisateurs par ville.",
+    "collection": "users",
+    "operationHint": "aggregate",
+    "solution": "db.users.aggregate([{ $group: { _id: \"$city\", count: { $sum: 1 } } }])",
+    "explanation": "$group fonctionne comme GROUP BY. _id = clé de regroupement, $sum: 1 = compteur."
+  },
+  {
+    "id": 14,
+    "level": "avancé",
+    "title": "Group sur orders",
+    "instruction": "Compte les commandes par statut, triées par count décroissant.",
+    "collection": "orders",
+    "operationHint": "aggregate",
+    "solution": "db.orders.aggregate([{ $group: { _id: \"$status\", count: { $sum: 1 } } }, { $sort: { count: -1 } }])",
+    "explanation": "Pipeline en 2 étapes : $group puis $sort. Le résultat passe d'une étape à l'autre."
+  },
+  {
+    "id": 15,
+    "level": "avancé",
+    "title": "Balance moyenne par ville",
+    "instruction": "Calcule la balance moyenne par ville, triée par moyenne décroissante.",
+    "collection": "users",
+    "operationHint": "aggregate",
+    "solution": "db.users.aggregate([{ $group: { _id: \"$city\", avgBalance: { $avg: \"$balance\" } } }, { $sort: { avgBalance: -1 } }])",
+    "explanation": "$avg calcule la moyenne d'un champ. On préfixe avec $ pour référencer un champ dans une expression."
+  },
+  {
+    "id": 16,
+    "level": "avancé",
+    "title": "Leçons avec tag aggregation",
+    "instruction": "Trouve toutes les leçons qui ont le tag \"aggregation\" dans leur tableau tags.",
+    "collection": "lessons",
+    "operationHint": "find",
+    "solution": "db.lessons.find({ tags: \"aggregation\" })",
+    "explanation": "Un filtre simple sur un champ array vérifie si la valeur est présente dans le tableau."
+  },
+  {
+    "id": 17,
+    "level": "avancé",
+    "title": "Jointure orders → users",
+    "instruction": "Fais une jointure entre orders et users pour récupérer le nom de l'utilisateur avec chaque commande.",
+    "collection": "orders",
+    "operationHint": "aggregate",
+    "solution": "db.orders.aggregate([{ $lookup: { from: \"users\", localField: \"userId\", foreignField: \"_id\", as: \"user\" } }, { $unwind: \"$user\" }, { $project: { _id: 1, amount: 1, status: 1, \"user.name\": 1 } }])",
+    "explanation": "$lookup = JOIN SQL. $unwind déplie le tableau résultant. $project sélectionne les champs."
+  },
+  {
+    "id": 18,
+    "level": "avancé",
+    "title": "Total des commandes payées",
+    "instruction": "Calcule le montant total de toutes les commandes payées.",
+    "collection": "orders",
+    "operationHint": "aggregate",
+    "solution": "db.orders.aggregate([{ $match: { status: \"paid\" } }, { $group: { _id: null, total: { $sum: \"$amount\" } } }])",
+    "explanation": "$match filtre les documents, $group avec _id: null regroupe tout. $sum additionne les montants."
+  },
+  {
+    "id": 19,
+    "level": "expert",
+    "title": "Top 3 villes par balance totale",
+    "instruction": "Calcule la balance totale par ville et retourne les 3 premières.",
+    "collection": "users",
+    "operationHint": "aggregate",
+    "solution": "db.users.aggregate([{ $group: { _id: \"$city\", totalBalance: { $sum: \"$balance\" } } }, { $sort: { totalBalance: -1 } }, { $limit: 3 }])",
+    "explanation": "Pattern 'top N' : $group → $sort → $limit. Très courant en analytics."
+  },
+  {
+    "id": 20,
+    "level": "expert",
+    "title": "Utilisateurs sans commande",
+    "instruction": "Trouve tous les utilisateurs qui n'ont aucune commande.",
+    "collection": "users",
+    "operationHint": "aggregate",
+    "solution": "db.users.aggregate([{ $lookup: { from: \"orders\", localField: \"_id\", foreignField: \"userId\", as: \"orders\" } }, { $match: { orders: { $size: 0 } } }, { $project: { name: 1, email: 1, _id: 0 } }])",
+    "explanation": "$lookup ramène les commandes. Si le tableau est vide ($size: 0), pas de commande. Équivalent LEFT JOIN WHERE IS NULL."
+  },
+  {
+    "id": 21,
+    "level": "expert",
+    "title": "Regex sur email",
+    "instruction": "Trouve tous les utilisateurs dont l'email se termine par \"@gmail.com\".",
+    "collection": "users",
+    "operationHint": "find",
+    "solution": "db.users.find({ email: { $regex: \"@gmail\\\\.com$\", $options: \"i\" } })",
+    "explanation": "$regex permet les expressions régulières. $options: \"i\" = insensible à la casse. $ ancre la fin."
+  },
+  {
+    "id": 22,
+    "level": "expert",
+    "title": "$addFields + $cond",
+    "instruction": "Ajoute un champ \"category\" : \"riche\" si balance > 500, \"normal\" sinon.",
+    "collection": "users",
+    "operationHint": "aggregate",
+    "solution": "db.users.aggregate([{ $addFields: { category: { $cond: { if: { $gt: [\"$balance\", 500] }, then: \"riche\", else: \"normal\" } } } }])",
+    "explanation": "$addFields ajoute des champs calculés. $cond = IF/THEN/ELSE. $gt dans une expression compare deux valeurs."
+  },
+  {
+    "id": 23,
+    "level": "expert",
+    "title": "Montant moyen par user",
+    "instruction": "Pour chaque utilisateur, calcule le montant moyen de ses commandes. Retourne userId et avgAmount.",
+    "collection": "orders",
+    "operationHint": "aggregate",
+    "solution": "db.orders.aggregate([{ $group: { _id: \"$userId\", avgAmount: { $avg: \"$amount\" } } }, { $project: { userId: \"$_id\", avgAmount: 1, _id: 0 } }])",
+    "explanation": "$group par userId, $avg pour la moyenne. $project renomme _id en userId avec la valeur \"$_id\"."
+  },
+  {
+    "id": 24,
+    "level": "expert",
+    "title": "Opérateur $all",
+    "instruction": "Trouve les leçons dont le tableau tags contient à la fois \"mongodb\" et \"index\".",
+    "collection": "lessons",
+    "operationHint": "find",
+    "solution": "db.lessons.find({ tags: { $all: [\"mongodb\", \"index\"] } })",
+    "explanation": "$all vérifie que tous les éléments listés sont présents dans le tableau. Différent de $in (au moins un)."
+  },
+  {
+    "id": 25,
+    "level": "expert",
+    "title": "$facet — double analyse",
+    "instruction": "En une seule requête, calcule le nombre d'utilisateurs par statut ET la balance moyenne globale.",
+    "collection": "users",
+    "operationHint": "aggregate",
+    "solution": "db.users.aggregate([{ $facet: { byStatus: [{ $group: { _id: \"$status\", count: { $sum: 1 } } }], globalAvgBalance: [{ $group: { _id: null, avg: { $avg: \"$balance\" } } }] } }])",
+    "explanation": "$facet exécute plusieurs sous-pipelines en parallèle sur les mêmes documents. Idéal pour les dashboards."
+  },
+  {
+    "id": 26,
+    "level": "très complexe",
+    "title": "Stats par ville (actifs)",
+    "instruction": "Pour chaque ville, calcule : nombre d'actifs, balance totale, balance moyenne. Trie par actifs décroissant.",
+    "collection": "users",
+    "operationHint": "aggregate",
+    "solution": "db.users.aggregate([{ $match: { status: \"active\" } }, { $group: { _id: \"$city\", activeCount: { $sum: 1 }, totalBalance: { $sum: \"$balance\" }, avgBalance: { $avg: \"$balance\" } } }, { $sort: { activeCount: -1 } }])",
+    "explanation": "$match filtre en amont (performant). $group accumule plusieurs métriques à la fois."
+  },
+  {
+    "id": 27,
+    "level": "très complexe",
+    "title": "Commandes payées par user",
+    "instruction": "Pour chaque utilisateur : nom, ville, et nombre de commandes payées.",
+    "collection": "users",
+    "operationHint": "aggregate",
+    "solution": "db.users.aggregate([{ $lookup: { from: \"orders\", let: { uid: \"$_id\" }, pipeline: [{ $match: { $expr: { $and: [{ $eq: [\"$userId\", \"$$uid\"] }, { $eq: [\"$status\", \"paid\"] }] } } }], as: \"paidOrders\" } }, { $project: { name: 1, city: 1, paidCount: { $size: \"$paidOrders\" }, _id: 0 } }])",
+    "explanation": "$lookup avec pipeline permet de filtrer les documents joints. let expose des variables locales. $size compte les éléments du tableau."
+  },
+  {
+    "id": 28,
+    "level": "très complexe",
+    "title": "$bucket — tranches d'âge",
+    "instruction": "Répartis les utilisateurs en tranches : [0-20], [21-30], [31-40], [41+].",
+    "collection": "users",
+    "operationHint": "aggregate",
+    "solution": "db.users.aggregate([{ $bucket: { groupBy: \"$age\", boundaries: [0, 21, 31, 41, 200], default: \"other\", output: { count: { $sum: 1 }, names: { $push: \"$name\" } } } }])",
+    "explanation": "$bucket découpe les documents selon des intervalles. boundaries = les bornes, default = hors bornes, output = accumulateurs."
+  },
+  {
+    "id": 29,
+    "level": "très complexe",
+    "title": "$unwind sur tags",
+    "instruction": "Compte le nombre de leçons par tag. Trie par nombre décroissant.",
+    "collection": "lessons",
+    "operationHint": "aggregate",
+    "solution": "db.lessons.aggregate([{ $unwind: \"$tags\" }, { $group: { _id: \"$tags\", lessonCount: { $sum: 1 } } }, { $sort: { lessonCount: -1 } }])",
+    "explanation": "$unwind déplie un tableau : 1 doc avec 3 tags → 3 docs. Puis $group par tag. Pattern classique pour analyser les tableaux."
+  },
+  {
+    "id": 30,
+    "level": "très complexe",
+    "title": "Rapport users/commandes",
+    "instruction": "Pour chaque utilisateur actif : nom, ville, nombre de commandes, total dépensé. Trié par total décroissant.",
+    "collection": "users",
+    "operationHint": "aggregate",
+    "solution": "db.users.aggregate([{ $match: { status: \"active\" } }, { $lookup: { from: \"orders\", localField: \"_id\", foreignField: \"userId\", as: \"orders\" } }, { $addFields: { orderCount: { $size: \"$orders\" }, totalSpent: { $sum: \"$orders.amount\" } } }, { $sort: { totalSpent: -1 } }, { $project: { _id: 0, name: 1, city: 1, orderCount: 1, totalSpent: 1 } }])",
+    "explanation": "Pipeline en 5 étapes : $match → $lookup → $addFields (calculs sur tableau) → $sort → $project."
+  }
+]

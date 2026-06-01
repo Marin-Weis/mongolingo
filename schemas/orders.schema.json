@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mongolingo/schemas/orders.schema.json",
+  "title": "Order",
+  "description": "Commande passée par un utilisateur",
+  "type": "object",
+  "required": ["_id", "userId", "amount", "status", "date"],
+  "properties": {
+    "_id": {
+      "type": "string",
+      "description": "Identifiant unique de la commande",
+      "pattern": "^order_[0-9]+$",
+      "examples": ["order_1", "order_99"]
+    },
+    "userId": {
+      "type": "string",
+      "description": "Référence vers l'_id de la collection users",
+      "pattern": "^user_[0-9]+$"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Montant de la commande en euros",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "status": {
+      "type": "string",
+      "description": "Statut de la commande",
+      "enum": ["paid", "pending", "cancelled"]
+    },
+    "date": {
+      "type": "string",
+      "description": "Date et heure de la commande au format ISO 8601",
+      "format": "date-time",
+      "examples": ["2024-03-15T10:30:00Z"]
+    }
+  },
+  "additionalProperties": false
+}
