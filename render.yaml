@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: mongolingo
+    runtime: node
+    plan: free
+    # Installe les dépendances puis compile le frontend React (dossier dist/)
+    buildCommand: npm install && npm run build
+    # Démarre le serveur Express qui sert l'API + le frontend
+    startCommand: npm start
+    envVars:
+      # À renseigner dans le dashboard Render avec l'URI de connexion MongoDB Atlas
+      # ex : mongodb+srv://user:password@cluster0.xxxx.mongodb.net/?retryWrites=true&w=majority
+      - key: MONGO_URL
+        sync: false

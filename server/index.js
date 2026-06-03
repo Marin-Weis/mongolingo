@@ -9,7 +9,7 @@ const ROOT = path.resolve(__dirname, '..')
 
 const MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:27017'
 const DB_NAME = 'mongolingo'
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 
 const COLLECTIONS = ['users', 'orders', 'lessons']
 
